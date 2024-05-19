@@ -3,9 +3,13 @@
 This is the third project created by the students of the second year of the Faculty of Electrical and Computer Engineering, as part of the exercises in the subject Data Security lectured by Ass. Mërgim Hoti.
 
 # Authors
+
 [Arbios Morina](https://github.com/arbiosmorina)
+
 [Arbnora Dragaj](https://github.com/arbnoradragaj)
+
 [Argjend Nimanaj](https://github.com/Argjend1of1)
+
 [Arlinda Beqiraj](https://github.com/Argjend1of1)
 
 
