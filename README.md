@@ -51,7 +51,7 @@ The Vigenere Cipher uses a keyword where each letter of the plaintext is shifted
 
       𝐸(𝑥𝑖)=(𝑥𝑖+𝑘𝑖)mod26
 
-where 𝐸(𝑥𝑖)E(xi) is the encrypted letter, 𝑥𝑖xi is the plaintext letter, and 𝑘𝑖ki is the key letter.
+where E(xi) is the encrypted letter, xi is the plaintext letter, and ki is the key letter.
 
 ### Decryption:
 Decryption reverses the process using the same keyword. Each letter in the ciphertext is shifted back by the value of the corresponding letter in the keyword. The decryption process is:
