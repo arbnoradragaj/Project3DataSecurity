@@ -80,9 +80,13 @@ and output files, and perform encryption and decryption.
 # Key Components
  Algorithm Selection: Users can choose between Caesar and Vigenere
 algorithms using a combo box.
+
  Key Input: Users can enter the key for the selected algorithm.
+
  File Selection: Users can choose input and output files using file choosers.
+
  Message Input: Users can enter the message to be encrypted or decrypted in a
 text area.
+
  Encrypt/Decrypt Buttons: Buttons to perform encryption and decryption on the
 entered message or selected file.
