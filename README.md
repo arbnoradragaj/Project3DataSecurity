@@ -59,4 +59,15 @@ Decryption reverses the process using the same keyword. Each letter in the ciphe
 
 where 𝐷(𝑥𝑖)D(xi) is the decrypted letter, 𝑥𝑖xi is the ciphertext letter, and 𝑘𝑖ki is the key letter.
 
+# Implementation
 
+# Algorithm Classes
+
+# CaesarCipher
+The CaesarCipher class contains methods for encrypting and decrypting text using the
+Caesar Cipher. It uses a simple shift based on the provided key.
+
+# VigenereCipher
+
+The VigenereCipher class contains methods for encrypting and decrypting text using the
+Vigenere Cipher. It uses a keyword to vary the shift for each letter in the text.
