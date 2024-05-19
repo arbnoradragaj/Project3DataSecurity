@@ -80,26 +80,37 @@ and output files, and perform encryption and decryption.
 # Key Components
  Algorithm Selection: Users can choose between Caesar and Vigenere
 algorithms using a combo box.
+
  Key Input: Users can enter the key for the selected algorithm.
+
  File Selection: Users can choose input and output files using file choosers.
+
  Message Input: Users can enter the message to be encrypted or decrypted in a
 text area.
+
  Encrypt/Decrypt Buttons: Buttons to perform encryption and decryption on the
 entered message or selected file.
+
 
 # Main Application
 The Projekti3 class is the main application class that extends Application from JavaFX.
 It provides a user interface to select an encryption algorithm, input keys, choose input
 and output files, and perform encryption and decryption.
 # Key Components
+
  Algorithm Selection: Users can choose between Caesar and Vigenere
 algorithms using a combo box.
+
  Key Input: Users can enter the key for the selected algorithm.
+
  File Selection: Users can choose input and output files using file choosers.
+
  Message Input: Users can enter the message to be encrypted or decrypted in a
 text area.
+
  Encrypt/Decrypt Buttons: Buttons to perform encryption and decryption on the
 entered message or selected file.
+
 
 
 # Results
@@ -107,8 +118,14 @@ entered message or selected file.
 
 The application provides a simple user interface to encrypt and decrypt messages and
 files using Caesar and Vigenere ciphers. Users can:
+
  Select the encryption algorithm.
+
  Enter the encryption/decryption key.
+
  Choose input and output files.
+
  Input a message to encrypt or decrypt.
+
  Encrypt or decrypt the message or the selected file.
+
