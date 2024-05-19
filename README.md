@@ -31,14 +31,14 @@ The Vigenere Cipher is a more complex polyalphabetic substitution cipher that us
 # Encryption: 
 To encrypt a message using the Caesar Cipher, each letter in the plaintext is shifted by a fixed number (the key). For example, with a key of 3, 'A' becomes 'D', 'B' becomes 'E', and so forth. This process can be represented mathematically as:
 
-# E(x)=(x+n)mod26
+      E(x)=(x+n)mod26
 
 where E(x) is the encrypted letter, x is the plaintext letter, and n is the shift key.
 
 # Decryption: 
 Decryption reverses the process by shifting each letter in the ciphertext back by the same number. For example, with a key of 3, 'D' becomes 'A', 'E' becomes 'B', etc. The mathematical representation for decryption is:
 
-# D(x)=(x−n+26)mod26
+      D(x)=(x−n+26)mod26
 
 where D(x) is the decrypted letter, x is the ciphertext letter, and n is the shift key.
 
