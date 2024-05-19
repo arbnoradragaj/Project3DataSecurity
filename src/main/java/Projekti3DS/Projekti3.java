@@ -55,59 +55,7 @@ public class Projekti3 extends Application {
         messageField.setPromptText("Enter message to encrypt/decrypt");
 
         // Encrypt button
-        Button encryptButton = new Button("Encrypt");
-        encryptButton.setOnAction(e -> {
-            String algorithm = algorithmComboBox.getValue();
-            String key = keyField.getText();
-            String message = messageField.getText();
-            String encryptedMessage = "";
 
-            try {
-                if (algorithm.equals("Caesar")) {
-                    int shift = Integer.parseInt(key);
-                    encryptedMessage = CaesarCipher.encrypt(message, shift);
-                } else if (algorithm.equals("Vigenere")) {
-                    encryptedMessage = VigenereCipher.encrypt(message, key);
-                }
-                messageField.setText(encryptedMessage);
-                saveToFile(encryptedMessage, outputFileField.getText());
-            } catch (NumberFormatException nfe) {
-                showAlert("Invalid Key", "The key for Caesar cipher must be an integer.");
-            } catch (IOException ioException) {
-                ioException.printStackTrace();
-                showAlert("File Error", "There was an error writing to the file.");
-            }
-        });
-
-        // Encrypt file button
-        Button encryptFileButton = new Button("Encrypt File");
-        encryptFileButton.setOnAction(e -> {
-            String algorithm = algorithmComboBox.getValue();
-            String key = keyField.getText();
-            String encryptedContent = "";
-
-            try (BufferedReader reader = new BufferedReader(new FileReader(inputFileField.getText()))) {
-                StringBuilder fileContent = new StringBuilder();
-                String line;
-                while ((line = reader.readLine()) != null) {
-                    fileContent.append(line).append("\n");
-                }
-
-                if (algorithm.equals("Caesar")) {
-                    int shift = Integer.parseInt(key);
-                    encryptedContent = CaesarCipher.encrypt(fileContent.toString(), shift);
-                } else if (algorithm.equals("Vigenere")) {
-                    encryptedContent = VigenereCipher.encrypt(fileContent.toString(), key);
-                }
-
-                saveToFile(encryptedContent, outputFileField.getText());
-            } catch (IOException ioException) {
-                ioException.printStackTrace();
-                showAlert("File Error", "There was an error reading the input file or writing to the output file.");
-            } catch (NumberFormatException nfe) {
-                showAlert("Invalid Key", "The key for Caesar cipher must be an integer.");
-            }
-        });
     }
 }
 
