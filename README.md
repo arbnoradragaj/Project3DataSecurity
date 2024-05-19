@@ -71,3 +71,18 @@ Caesar Cipher. It uses a simple shift based on the provided key.
 
 The VigenereCipher class contains methods for encrypting and decrypting text using the
 Vigenere Cipher. It uses a keyword to vary the shift for each letter in the text.
+
+# Main Application
+The Projekti3 class is the main application class that extends Application from JavaFX.
+It provides a user interface to select an encryption algorithm, input keys, choose input
+and output files, and perform encryption and decryption.
+
+# Key Components
+ Algorithm Selection: Users can choose between Caesar and Vigenere
+algorithms using a combo box.
+ Key Input: Users can enter the key for the selected algorithm.
+ File Selection: Users can choose input and output files using file choosers.
+ Message Input: Users can enter the message to be encrypted or decrypted in a
+text area.
+ Encrypt/Decrypt Buttons: Buttons to perform encryption and decryption on the
+entered message or selected file.
