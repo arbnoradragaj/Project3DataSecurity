@@ -1,12 +1,13 @@
 package Projekti3DS;
 
 import javafx.application.Application;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
+import javafx.scene.Scene;
+import javafx.scene.control.*;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import javafx.scene.layout.*;
+import javafx.geometry.Insets;
+import java.io.*;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -55,8 +56,7 @@ public class Projekti3 extends Application {
         messageField.setPromptText("Enter message to encrypt/decrypt");
 
         // Encrypt button
-                Button encryptButton = new Button("Encrypt");
-        encryptButton.setOnAction(e -> {
+                Button encryptButton = new Button("Encrypt");encryptButton.setOnAction(e -> {
             String algorithm = algorithmComboBox.getValue();
             String key = keyField.getText();
             String message = messageField.getText();
@@ -163,8 +163,50 @@ public class Projekti3 extends Application {
                 showAlert("Invalid Key", "The key for Caesar cipher must be an integer.");
             }
         });
+        // Layout
+        GridPane grid = new GridPane();
+        grid.setPadding(new Insets(10, 10, 10, 10));
+        grid.setVgap(8);
+        grid.setHgap(10);
 
+        GridPane.setConstraints(algorithmComboBox, 0, 0);
+        GridPane.setConstraints(keyField, 1, 0);
+        GridPane.setConstraints(inputFileField, 0, 1);
+        GridPane.setConstraints(inputFileButton, 1, 1);
+        GridPane.setConstraints(outputFileField, 0, 2);
+        GridPane.setConstraints(outputFileButton, 1, 2);
+        GridPane.setConstraints(messageField, 0, 3, 2, 1);
+        GridPane.setConstraints(encryptButton, 0, 4);
+        GridPane.setConstraints(encryptFileButton, 1, 4);
+        GridPane.setConstraints(decryptButton, 0, 5);
+        GridPane.setConstraints(decryptFileButton, 1, 5);
+
+        grid.getChildren().addAll(algorithmComboBox, keyField, inputFileField, inputFileButton, outputFileField, outputFileButton, messageField, encryptButton, encryptFileButton, decryptButton, decryptFileButton);
+
+        Scene scene = new Scene(grid, 600, 400);
+        primaryStage.setScene(scene);
+        primaryStage.show();
     }
+
+    public static void main(String[] args) {
+        launch(args);
+    }
+
+    private void saveToFile(String content, String filePath) throws IOException {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath))) {
+            writer.write(content);
+        }
+    }
+
+    private void showAlert(String title, String message) {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
+    }
+
+
 }
 
 class CaesarCipher {
