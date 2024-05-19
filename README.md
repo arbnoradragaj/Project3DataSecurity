@@ -26,6 +26,7 @@ The Vigenere Cipher is a more complex polyalphabetic substitution cipher that us
 
 # Encryption and Decryption
 
+
 # Caesar Cipher Encryption and Decryption
 
 # Encryption: 
@@ -41,4 +42,17 @@ Decryption reverses the process by shifting each letter in the ciphertext back b
       D(x)=(x−n+26)mod26
 
 where D(x) is the decrypted letter, x is the ciphertext letter, and n is the shift key.
+
+# Vigenere Cipher Encryption and Decryption
+
+# Encryption:
+The Vigenere Cipher uses a keyword where each letter of the plaintext is shifted by the value of the corresponding letter in the keyword. For example, with a keyword "KEY", the first letter of the plaintext is shifted by the value of 'K', the second by 'E', and the third by 'Y'. This can be represented as:
+𝐸(𝑥𝑖)=(𝑥𝑖+𝑘𝑖)mod  26E(xi)=(xi+ki)mod26
+where 𝐸(𝑥𝑖)E(xi) is the encrypted letter, 𝑥𝑖xi is the plaintext letter, and 𝑘𝑖ki is the key letter.
+
+# Decryption:
+Decryption reverses the process using the same keyword. Each letter in the ciphertext is shifted back by the value of the corresponding letter in the keyword. The decryption process is:
+𝐷(𝑥𝑖)=(𝑥𝑖−𝑘𝑖+26)mod  26D(xi)=(xi−ki+26)mod26
+where 𝐷(𝑥𝑖)D(xi) is the decrypted letter, 𝑥𝑖xi is the ciphertext letter, and 𝑘𝑖ki is the key letter.
+
 
