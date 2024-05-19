@@ -109,6 +109,31 @@ public class Projekti3 extends Application {
             }
         });
 
+        // Decrypt button
+        Button decryptButton = new Button("Decrypt");
+        decryptButton.setOnAction(e -> {
+            String algorithm = algorithmComboBox.getValue();
+            String key = keyField.getText();
+            String encryptedMessage = messageField.getText();
+            String decryptedMessage = "";
+
+            try {
+                if (algorithm.equals("Caesar")) {
+                    int shift = Integer.parseInt(key);
+                    decryptedMessage = CaesarCipher.decrypt(encryptedMessage, shift);
+                } else if (algorithm.equals("Vigenere")) {
+                    decryptedMessage = VigenereCipher.decrypt(encryptedMessage, key);
+                }
+                messageField.setText(decryptedMessage);
+                saveToFile(decryptedMessage, outputFileField.getText());
+            } catch (NumberFormatException nfe) {
+                showAlert("Invalid Key", "The key for Caesar cipher must be an integer.");
+            } catch (IOException ioException) {
+                ioException.printStackTrace();
+                showAlert("File Error", "There was an error writing to the file.");
+            }
+        });
+
     }
 }
 
