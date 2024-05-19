@@ -134,35 +134,7 @@ public class Projekti3 extends Application {
             }
         });
 
-        // Decrypt file button
-        Button decryptFileButton = new Button("Decrypt File");
-        decryptFileButton.setOnAction(e -> {
-            String algorithm = algorithmComboBox.getValue();
-            String key = keyField.getText();
-            String decryptedContent = "";
 
-            try (BufferedReader reader = new BufferedReader(new FileReader(inputFileField.getText()))) {
-                StringBuilder fileContent = new StringBuilder();
-                String line;
-                while ((line = reader.readLine()) != null) {
-                    fileContent.append(line).append("\n");
-                }
-
-                if (algorithm.equals("Caesar")) {
-                    int shift = Integer.parseInt(key);
-                    decryptedContent = CaesarCipher.decrypt(fileContent.toString(), shift);
-                } else if (algorithm.equals("Vigenere")) {
-                    decryptedContent = VigenereCipher.decrypt(fileContent.toString(), key);
-                }
-
-                saveToFile(decryptedContent, outputFileField.getText());
-            } catch (IOException ioException) {
-                ioException.printStackTrace();
-                showAlert("File Error", "There was an error reading the input file or writing to the output file.");
-            } catch (NumberFormatException nfe) {
-                showAlert("Invalid Key", "The key for Caesar cipher must be an integer.");
-            }
-        });
     }
 }
 
