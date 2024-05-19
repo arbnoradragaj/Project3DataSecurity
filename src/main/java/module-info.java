@@ -5,4 +5,5 @@ module com.example.datasecurity {
 
     opens com.example.datasecurity to javafx.fxml;
     exports com.example.datasecurity;
+    exports Projekti3DS;
 }
